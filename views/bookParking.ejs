@@ -1,0 +1,66 @@
+<%- include('./partials/header.ejs')%>
+
+<%- include('./logoLogout.ejs')%>
+<%- include("./navbar.ejs")%>
+
+<div style="box-shadow: 1px 1px 5px rgb(26, 26, 116);" class="alert alert-info col-md-6 mx-auto text-center mt-3" role="alert">
+  <h3>Book a Slot</h3>
+</div>
+
+
+<form style="box-shadow: 1px 1px 5px rgb(26, 26, 116); padding: 50px 100px ;" method = "post"  class="col-md-6 mx-auto alert " >
+  
+
+  <div class="mb-3 d-flex justify-content-between">
+    <div class="mb-3 col-sm-5">
+      <label class="form-label text-secondary-emphasis"><h4>Phone No. :---</h4></label>
+      <input type="number" id="phone" name="phone" value="" class="form-control bg-light"  />
+    </div>
+    <div class="mb-3 col-sm-5">
+      <label class="form-label text-secondary-emphasis"><h4>Vehicle type:---</h4></label>
+      <input type="string" id="vehicletype" name="vehicletype" value="" class="form-control bg-light" />
+    </div>
+  </div>
+  
+  <div class="mb-3 d-flex justify-content-between">
+    <div class="mb-3 col-sm-5">
+      <label class="form-label text-secondary-emphasis"><h4>Car Plate No. :---</h4></label>
+      <input type="number" id="plateno" name="plateno" value="" class="form-control bg-light"  />
+    </div>
+    <div class="mb-3 col-sm-5">
+      <label class="form-label text-secondary-emphasis"><h4>Select Date:---</h4></label>
+      <input type="date" id="date" name="date" value="" class="form-control bg-light" />
+    </div>
+  </div>
+
+  <div class="d-flex justify-content-between ">
+    <div class="mb-3 col-sm-5">
+      <label class="form-label text-secondary-emphasis"><h4>Start Time:---</h4></label>
+      <input type="time" id="time" name="time" value="" class="form-control bg-light"  />
+    </div>
+    <div class="mb-3 col-sm-5">
+      <label class="form-label text-secondary-emphasis"><h4>Select Hours:--</h4></label>
+      <input
+        type="number"
+        id="hours"
+        name="hours"
+        value=""
+        min="1"
+        max="24"
+        step="1"
+        class="form-control bg-light"
+        
+      />
+    </div>
+  </div> 
+  
+  <div class="d-grid gap-2 ">
+    <button style="font-weight: bold; font-size: 20px;" type="submit" class="btn btn-primary my-3">
+      Book Now
+    </button>
+  </div>
+</form>
+
+  
+
+<%- include('./partials/footer.ejs')%>

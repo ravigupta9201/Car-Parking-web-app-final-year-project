@@ -1,0 +1,78 @@
+<%- include('./partials/header.ejs')%>
+<%- include('./logoLogout.ejs')%>
+<%- include('./navbar.ejs')%>
+
+
+<div style="box-shadow: 1px 1px 5px rgb(26, 26, 116);" class="alert alert-info col-md-6 mx-auto text-center mt-3" role="alert">
+  <h3>view booking</h3>
+</div>
+      <div class="col-md-6 mx-auto text-center">
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">Slot</th>
+              <th scope="col">Plate no.</th>
+              <th scope="col">Date</th>
+              <th scope="col">Start Time</th>
+              <th scope="col">End Time</th>
+              <th scope="col">Total hours</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% var i = 1 %>
+            <% data.forEach((item) => {  
+              const timeParts = item.time.split(':');
+              const timeObj = new Date(item.date);
+              timeObj.setHours(timeParts[0], timeParts[1]);
+              const endTimeObj = new Date(timeObj.getTime() + (item.hours * 60 * 60 * 1000));
+              const endTime = endTimeObj.toLocaleTimeString('en-US', {hour: 'numeric', minute: 'numeric'});
+            %>
+              <tr>
+                <td scope="row" class="text-success"><h5>Slot <%= i++%></h5></td>
+                <td scope="row" class="text-warning-emphasis"> <h4><%= item.plateno %></h4></td>
+                <td class="text-secondary-emphasis"><h5><%= item.date.toLocaleDateString('en-US', {year: 'numeric', month: 'long', day: 'numeric' }) %></h5></td>
+                <td><h5><%= timeObj.toLocaleTimeString('en-US', {hour: 'numeric', minute: 'numeric'}) %></h5></td>
+                <td class="text-danger"><h5><%= endTime %></h5></td>
+                <td><h5><%= item.hours %></h5></td>
+              </tr>
+            <% }) %>
+            
+
+
+
+            <!-- <% data.forEach( (item)=>{ %>
+              <tr>
+                <td scope="row" class="text-success">Slot 1</td>
+                <td class="text-danger"><%= item.date.toLocaleDateString('en-US', {year: 'numeric', month: 'long', day: 'numeric' }) %></td>
+                <td><%= item.time %></td>
+                <td><%= (item.time) + (item.hours) %></td>
+                <td><%= item.hours %></td>
+              </tr>
+            <% }) %> -->
+
+            <!-- <tr>
+              <td scope="row" class="text-success">Slot 1</td>
+              <td class="text-danger">2079-12-3</td>
+              <td>02:00</td>
+              <td>04:00</td>
+              <td>2hrs</td>
+            </tr>
+            <tr>
+              <td scope="row">Slot 2</td>
+              <td class="text-danger">2079-12-5</td>
+              <td>03:00</td>
+              <td>04:00</td>
+              <td>1hr</td>
+            </tr>
+            <tr>
+              <td scope="row">Slot 3</td>
+              <td class="text-danger">2079-12-6</td>
+              <td>05:00</td>
+              <td>06:00</td>
+              <td>1hr</td>
+            </tr> -->
+          </tbody>
+        </table>
+      </div>
+
+<%- include('./partials/footer.ejs')%>

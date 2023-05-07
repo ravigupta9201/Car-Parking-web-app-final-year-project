@@ -1,0 +1,38 @@
+<%- include('./partials/header.ejs')%> <%- include('./logoLogout.ejs') %> <%-
+include('./navbar.ejs')%>
+
+<div style="box-shadow: 2px 1px 5px rgb(26, 26, 116)" class="mt-5 w-50 mx-auto">
+  <div
+    style="box-shadow: 2px 1px 5px rgb(26, 26, 116)"
+    class="alert alert-info"
+    role="alert"
+  >
+    <h3>Feedback</h3>
+  </div>
+  <form method="post" class="form-floating">
+    <label for="floatingTextarea2">give your feedback</label>
+    <input
+      style="height: 300px"
+      type="string"
+      id="userFeedback"
+      name="userFeedback"
+      value=""
+      class="form-control"
+    />
+    <div style="display: flex; justify-content: end; margin-top: 20px">
+      <button
+        style="
+          box-shadow: 2px 1px 5px rgb(26, 26, 116);
+          font-size: 22px;
+          font-weight: bold;
+        "
+        type="submit"
+        class="btn btn-outline-info px-5 py-3 mx-4"
+      >
+        Send
+      </button>
+    </div>
+  </form>
+</div>
+
+<%- include('./partials/footer.ejs')%>
