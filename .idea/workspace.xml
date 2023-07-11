@@ -20,9 +20,10 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "parking__system",
+    "git-widget-placeholder": "master",
     "last_opened_file_path": "G:/Geeky Shows/practice/booking",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -41,6 +42,7 @@
       <option name="presentableId" value="Default" />
       <updated>1682657016736</updated>
       <workItem from="1682657017935" duration="1223000" />
+      <workItem from="1684496132463" duration="645000" />
     </task>
     <servers />
   </component>
